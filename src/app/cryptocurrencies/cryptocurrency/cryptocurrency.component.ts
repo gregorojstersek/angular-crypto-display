@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { CryptocurrencyDetails } from './cryptocurrency-details.model';
 
 @Component({
   selector: 'app-cryptocurrency',
@@ -9,7 +10,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CryptocurrencyComponent implements OnInit {
   id: number;
-  cryptocurrency: any;
+  cryptocurrency: CryptocurrencyDetails;
+
+  selectedCurrency = 'USD';
 
   constructor(private route: ActivatedRoute, private httpClient: HttpClient) {}
 
@@ -28,8 +31,8 @@ export class CryptocurrencyComponent implements OnInit {
           rank: response.data[this.id].cmc_rank,
           name: response.data[this.id].name,
           symbol: response.data[this.id].symbol,
-          max_supply: response.data[this.id].max_supply,
-          total_supply: response.data[this.id].total_supply,
+          maxSupply: response.data[this.id].max_supply,
+          totalSupply: response.data[this.id].total_supply,
           price: response.data[this.id].quote['USD'].price,
           marketCap: response.data[this.id].quote['USD'].market_cap,
           volume24: response.data[this.id].quote['USD'].volume_24h,

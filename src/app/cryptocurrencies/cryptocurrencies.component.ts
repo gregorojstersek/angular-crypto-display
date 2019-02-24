@@ -18,7 +18,9 @@ export class CryptocurrenciesComponent implements OnInit {
       price: 4172.90224889,
       percentChange24h:  4.66602
     }
-  ]
+  ];
+
+  selectedCurrency = 'USD';
 
   constructor(private router: Router, private httpClient: HttpClient) { }
 
