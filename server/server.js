@@ -53,10 +53,10 @@ app.get('/api/cryptocurrencies', (req, res) => {
 
 app.get('/api/cryptocurrencies/:id', (req, res) => {
   const id = req.params.id;
+  const queryStrings = req.query;
   const url = buildUrl('https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest', {
-    queryParams: { id }
+    queryParams: { ...queryStrings, id }
   })
-  console.log(process.env.API_KEY);
   request({
     headers: {
       'X-CMC_PRO_API_KEY': process.env.API_KEY

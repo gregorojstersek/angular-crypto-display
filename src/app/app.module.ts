@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +10,13 @@ import { CryptocurrenciesComponent } from './cryptocurrencies/cryptocurrencies.c
 import { SettingsComponent } from './settings/settings.component';
 import { CryptocurrencyComponent } from './cryptocurrencies/cryptocurrency/cryptocurrency.component';
 import { FormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './store/app.reducers';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import * as fromSettings from './settings/store/settings.reducers';
+import { CryptocurrencyInterceptor } from './cryptocurrencies/cryptocurrency.interceptor';
 
 @NgModule({
   declarations: [
@@ -24,9 +31,14 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    StoreModule.forRoot(reducers),
+    // StoreRouterConnectingModule,
+    !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: CryptocurrencyInterceptor, multi: true},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

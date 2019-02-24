@@ -19,7 +19,7 @@
   <span>{{ cryptocurrency.symbol }}</span><br><br>
 
   <span class="bold">Price</span><br>
-  <span>{{ cryptocurrency.price | number : '1.2-2' }} {{ selectedCurrency }}</span><br><br>
+  <span>{{ cryptocurrency.price | number : '1.2-2' }} {{ (settingsState | async).selectedCurrency }}</span><br><br>
 
   <span class="bold">24h Volume</span><br>
   <span>{{ cryptocurrency.volume24 | number : '1.2-2'}}</span><br><br>
@@ -28,13 +28,13 @@
   <span>{{ cryptocurrency.marketCap | number : '1.2-2'}}</span><br><br>
 
   <span class="bold">1h Change</span><br>
-  <span>{{ cryptocurrency.percentChange1h | number : '1.2-2'}}</span><br><br>
+  <span>{{ cryptocurrency.percentChange1h | number : '1.2-2'}} %</span><br><br>
 
   <span class="bold">24h Change</span><br>
-  <span>{{ cryptocurrency.percentChange24h | number : '1.2-2'}}</span><br><br>
+  <span>{{ cryptocurrency.percentChange24h | number : '1.2-2'}} %</span><br><br>
 
   <span class="bold">7d Change</span><br>
-  <span>{{ cryptocurrency.percentChange7d | number : '1.2-2'}}</span><br><br>
+  <span>{{ cryptocurrency.percentChange7d | number : '1.2-2'}} %</span><br><br>
 
   <span class="bold">Available Supply</span><br>
   <span>{{ cryptocurrency.maxSupply }}</span><br><br>

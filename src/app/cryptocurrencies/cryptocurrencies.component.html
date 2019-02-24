@@ -23,8 +23,8 @@
         <th scope="row">{{ cryptocurrency.rank }}</th>
         <td>{{ cryptocurrency.name }}</td>
         <td>{{ cryptocurrency.symbol }}</td>
-        <td>{{ cryptocurrency.price | number : '1.2-2'}} {{ selectedCurrency }}</td>
-        <td>{{ cryptocurrency.percentChange24h | number : '1.2-2' }}</td>
+        <td>{{ cryptocurrency.price | number : '1.2-2'}} {{ (settingsState | async).selectedCurrency }}</td>
+        <td>{{ cryptocurrency.percentChange24h | number : '1.2-2' }} %</td>
         <td>
           <i class="fa fa-info-circle cursor-pointer" (click)="goToCryptocurrency(cryptocurrency.id)"></i>
         </td>
