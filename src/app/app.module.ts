@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,7 +9,6 @@ import { HeaderComponent } from './header/header.component';
 import { CryptocurrenciesComponent } from './cryptocurrencies/cryptocurrencies.component';
 import { SettingsComponent } from './settings/settings.component';
 import { CryptocurrencyComponent } from './cryptocurrencies/cryptocurrency/cryptocurrency.component';
-import { CryptocurrenciesInterceptor } from './cryptocurrencies/cryptocurrencies.interceptor';
 
 @NgModule({
   declarations: [
@@ -25,9 +24,7 @@ import { CryptocurrenciesInterceptor } from './cryptocurrencies/cryptocurrencies
     HttpClientModule,
     NgbModule
   ],
-  providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: CryptocurrenciesInterceptor, multi: true },
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
