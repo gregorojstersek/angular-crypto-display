@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cryptocurrencies',
@@ -19,7 +20,7 @@ export class CryptocurrenciesComponent implements OnInit {
     }
   ]
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private router: Router, private httpClient: HttpClient) { }
 
   ngOnInit() {
     this.getCryptoCurrencies();
@@ -41,8 +42,8 @@ export class CryptocurrenciesComponent implements OnInit {
     // });
   }
 
-  goToCryptocurrency = () => {
-
+  goToCryptocurrency = (id) => {
+    this.router.navigate([`cryptocurrencies/${id}`]);
   }
 
 }

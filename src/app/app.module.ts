@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { CryptocurrenciesComponent } from './cryptocurrencies/cryptocurrencies.component';
 import { SettingsComponent } from './settings/settings.component';
 import { CryptocurrencyComponent } from './cryptocurrencies/cryptocurrency/cryptocurrency.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { CryptocurrencyComponent } from './cryptocurrencies/cryptocurrency/crypt
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     NgbModule

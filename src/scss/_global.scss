@@ -9,19 +9,9 @@ h1 {
   padding: 35px 0 0 0;
 }
 
-.form-control:focus,
+.from-control:focus,
 .btn:focus {
   border-color: $blue;
-}
-
-.form-control {
-  &.ng-dirty {
-    &.ng-touched {
-      &.ng-invalid {
-        border: 1px solid $red;
-      }
-    }
-  }
 }
 
 .main {

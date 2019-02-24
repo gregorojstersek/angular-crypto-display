@@ -19,14 +19,14 @@
       </tr>
     </thead>
     <tbody *ngIf="cryptocurrencies.length > 0">
-      <tr *ngFor="let cryptocurrency of cryptocurrencies; let i = index" (dblclick)="goToCryptocurrency(cryptocurrency)" class="station-row">
+      <tr *ngFor="let cryptocurrency of cryptocurrencies; let i = index" (dblclick)="goToCryptocurrency(cryptocurrency.id)" class="station-row">
         <th scope="row">{{ cryptocurrency.rank }}</th>
         <td>{{ cryptocurrency.name }}</td>
         <td>{{ cryptocurrency.symbol }}</td>
         <td>{{ cryptocurrency.price }}</td>
         <td>{{ cryptocurrency.percentChange24h }}</td>
         <td>
-          <i class="fa fa-info-circle cursor-pointer"></i>
+          <i class="fa fa-info-circle cursor-pointer" (click)="goToCryptocurrency(cryptocurrency.id)"></i>
         </td>
       </tr>
     </tbody>

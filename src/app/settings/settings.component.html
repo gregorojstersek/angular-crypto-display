@@ -1,3 +1,14 @@
-<p>
-  settings works!
-</p>
+<div class="text-center">
+  <h1>Settings</h1>
+</div>
+
+<p>&nbsp;</p>
+
+<div class="col-sm-4">
+  <div class="form-group">
+    <label for="stationId">Currency</label>
+    <select class="form-control" [(ngModel)]="selectedCurrency">
+      <option *ngFor="let currency of currencies" value="{{ currency }}">{{ currency }}</option>
+    </select>
+  </div>
+</div>
