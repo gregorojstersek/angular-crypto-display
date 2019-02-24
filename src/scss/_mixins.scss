@@ -1,0 +1,15 @@
+@mixin setBgColorAndHover($baseColor) {
+  background-color: $baseColor;
+
+  &:not([disabled]):hover {
+    background-color: darken($baseColor, 2.5%)
+  }
+}
+
+@mixin setColorAndHover($baseColor) {
+  color: $baseColor;
+
+  &:not([disabled]):hover {
+    color: darken($baseColor, 2.5%)
+  }
+}

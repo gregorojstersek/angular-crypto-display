@@ -1,0 +1,50 @@
+.navbar {
+  &--blue {
+    background-color: #0099CC;
+  }
+
+  &__logo {
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+    color: white;
+    font-weight: 700;
+
+    &:hover, &:active, &:focus {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  &__toggler {
+    background-color: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+
+    &__icon {
+      font-size: 20px;
+      color: #ffffff;
+    }
+  }
+
+  .nav-link {
+    color: #ffffff;
+    padding-left: 2rem;
+
+    &.active {
+      font-weight: 700;
+    }
+
+    @media (max-width: 991px) {
+      padding-left: 0;
+    }
+
+    &:hover {
+      color: #ffffff;
+    }
+  }
+}

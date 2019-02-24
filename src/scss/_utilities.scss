@@ -1,0 +1,38 @@
+.white {
+  color: $white;
+}
+
+.padding-bottom-15 {
+  padding-bottom: 15px;
+}
+
+.margin-right-5 {
+  margin-right: 7px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.clear {
+  margin-top: 35px;
+  clear: both;
+}
+
+.svg-inline {
+  position: relative;
+  top: -1px;
+}
+
+.display-inline-block {
+  display: inline-block;
+}
+
+.bold {
+  font-weight: 700;
+}

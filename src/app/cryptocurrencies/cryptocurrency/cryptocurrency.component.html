@@ -1,0 +1,47 @@
+<div class="text-center">
+  <h1>{{ cryptocurrency.name }}</h1>
+</div>
+
+<div class="col-sm-12">
+  <button class="btn btn-primary float-right" (click)="getCryptocurrency()">Refresh</button>
+</div>
+
+<p>&nbsp;</p>
+
+<div class="col-sm-6">
+  <span class="bold">Rank</span><br>
+  <span>{{ cryptocurrency.rank }}</span><br><br>
+
+  <span class="bold">Name</span><br>
+  <span>{{ cryptocurrency.name }}</span><br><br>
+
+  <span class="bold">Symbol</span><br>
+  <span>{{ cryptocurrency.symbol }}</span><br><br>
+
+  <span class="bold">Price</span><br>
+  <span>{{ cryptocurrency.price }}</span><br><br>
+
+  <span class="bold">24h Volume</span><br>
+  <span>{{ cryptocurrency.volume24 }}</span><br><br>
+
+  <span class="bold">Market cap</span><br>
+  <span>{{ cryptocurrency.marketCap }}</span><br><br>
+
+  <span class="bold">1h Change</span><br>
+  <span>{{ cryptocurrency.percentChange1h }}</span><br><br>
+
+  <span class="bold">24h Change</span><br>
+  <span>{{ cryptocurrency.percentChange24h }}</span><br><br>
+
+  <span class="bold">7d Change</span><br>
+  <span>{{ cryptocurrency.percentChange7d }}</span><br><br>
+
+  <span class="bold">Available Supply</span><br>
+  <span>{{ cryptocurrency.max_supply }}</span><br><br>
+
+  <span class="bold">Total Supply</span><br>
+  <span>{{ cryptocurrency.total_supply }}</span><br><br>
+
+</div>
+
+<pre>{{ cryptocurrency | json }}</pre>

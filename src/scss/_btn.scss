@@ -1,0 +1,8 @@
+.btn-primary {
+  @include setBgColorAndHover($blue);
+  border-color: $blue;
+
+  &:focus, &:active {
+    border-color: $blue;
+  }
+}

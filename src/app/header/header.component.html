@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar--blue">
+  <div class="container">
+    <a class="navbar__logo" routerLink="">CryptoDisplay</a>
+    <button class="navbar-toggler navbar__toggler" (click)="toggleNavbar()">
+      <span class="navbar__toggler__icon"><i class="fa fa-bars"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="cryptocurrencies" routerLinkActive="active">Cryptocurrencies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="settings" routerLinkActive="active"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,16 @@
+.table--flixbus {
+
+  th,
+  td {
+    padding: 1rem;
+    border-top: none;
+  }
+
+  tbody {
+    tr {
+      &:hover {
+        background-color: $soft-gray;
+      }
+    }
+  }
+}

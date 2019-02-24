@@ -1,0 +1,35 @@
+<div class="text-center">
+  <h1>Cryptocurrencies</h1>
+</div>
+
+<div class="col-sm-12">
+  <button class="btn btn-primary float-right" (click)="getCryptoCurrencies()">Refresh</button>
+</div>
+
+<div class="table-responsive">
+  <table class="table table--flixbus">
+    <thead>
+      <tr>
+        <th scope="col">Rank</th>
+        <th scope="col">Name</th>
+        <th scope="col">Symbol</th>
+        <th scope="col">Price</th>
+        <th scope="col">24 hour change</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody *ngIf="cryptocurrencies.length > 0">
+      <tr *ngFor="let cryptocurrency of cryptocurrencies; let i = index" (dblclick)="goToCryptocurrency(cryptocurrency)" class="station-row">
+        <th scope="row">{{ cryptocurrency.rank }}</th>
+        <td>{{ cryptocurrency.name }}</td>
+        <td>{{ cryptocurrency.symbol }}</td>
+        <td>{{ cryptocurrency.price }}</td>
+        <td>{{ cryptocurrency.percentChange24h }}</td>
+        <td>
+          <i class="fa fa-info-circle cursor-pointer"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p *ngIf="cryptocurrencies.length === 0">No Cryptocurrencies yet!</p>
+</div>
