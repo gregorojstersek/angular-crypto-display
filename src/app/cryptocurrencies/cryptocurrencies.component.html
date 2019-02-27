@@ -18,8 +18,8 @@
         <th scope="col"></th>
       </tr>
     </thead>
-    <tbody *ngIf="cryptocurrencies.length > 0">
-      <tr *ngFor="let cryptocurrency of cryptocurrencies; let i = index" (dblclick)="goToCryptocurrency(cryptocurrency.id)" class="station-row">
+    <tbody *ngIf="(cryptocurrencyState | async).cryptocurrencies.length > 0">
+      <tr *ngFor="let cryptocurrency of (cryptocurrencyState  | async).cryptocurrencies; let i = index" (dblclick)="goToCryptocurrency(cryptocurrency.id)" class="station-row">
         <th scope="row">{{ cryptocurrency.rank }}</th>
         <td>{{ cryptocurrency.name }}</td>
         <td>{{ cryptocurrency.symbol }}</td>
@@ -31,5 +31,5 @@
       </tr>
     </tbody>
   </table>
-  <p *ngIf="cryptocurrencies.length === 0">No Cryptocurrencies yet!</p>
+  <p *ngIf="(cryptocurrencyState | async).cryptocurrencies.length === 0">No Cryptocurrencies yet!</p>
 </div>

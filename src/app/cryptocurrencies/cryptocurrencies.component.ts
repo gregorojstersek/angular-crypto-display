@@ -4,8 +4,11 @@ import { Router } from '@angular/router';
 
 import * as fromApp from '../store/app.reducers';
 import * as fromSettings from '../settings/store/settings.reducers';
+import * as CryptocurrencyActions from './store/cryptocurrency.actions';
+import * as fromCryptocurrency from './store/cryptocurrency.reducers';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { Cryptocurrency } from './cryptocurrency.model';
 
 @Component({
   selector: 'app-cryptocurrencies',
@@ -14,40 +17,21 @@ import { Observable } from 'rxjs';
 })
 export class CryptocurrenciesComponent implements OnInit {
 
-  cryptocurrencies = [
-    {
-      id: 1,
-      name: 'Bitcoin',
-      rank: 1,
-      symbol: 'BTC',
-      price: 4172.90224889,
-      percentChange24h:  4.66602
-    }
-  ];
+  cryptocurrencies: Cryptocurrency[] = [];
 
   settingsState: Observable<fromSettings.State>;
+  cryptocurrencyState: Observable<fromCryptocurrency.State>;
 
   constructor(private router: Router, private store: Store<fromApp.AppState>, private httpClient: HttpClient) { }
 
   ngOnInit() {
     this.getCryptoCurrencies();
     this.settingsState = this.store.select('settings');
+    this.cryptocurrencyState = this.store.select('cryptocurrency');
   }
 
   getCryptoCurrencies = () => {
-    // this.httpClient.get(`http://localhost:4200/api/cryptocurrencies`).subscribe((response: any) => {
-    //   console.log(response);
-    //   this.cryptocurrencies = response.data.map(cryptocurrency => {
-    //     return {
-    //       id: cryptocurrency.id,
-    //       rank: cryptocurrency.cmc_rank,
-    //       name: cryptocurrency.name,
-    //       symbol: cryptocurrency.symbol,
-    //       price: cryptocurrency.quote['USD'].price,
-    //       percentChange24h: cryptocurrency.quote['USD'].percent_change_24h,
-    //       };
-    //   })
-    // });
+    this.store.dispatch(new CryptocurrencyActions.GetCryptoCurrencies());
   }
 
   goToCryptocurrency = (id) => {

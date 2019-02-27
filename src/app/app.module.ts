@@ -17,6 +17,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import * as fromSettings from './settings/store/settings.reducers';
 import { CryptocurrencyInterceptor } from './cryptocurrencies/cryptocurrency.interceptor';
+import { EffectsModule } from '@ngrx/effects';
+import { CryptocurrencyEffects } from './cryptocurrencies/store/cryptocurrency.effects';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { CryptocurrencyInterceptor } from './cryptocurrencies/cryptocurrency.int
     HttpClientModule,
     NgbModule,
     StoreModule.forRoot(reducers),
-    // StoreRouterConnectingModule,
+    EffectsModule.forRoot([CryptocurrencyEffects]),
+    StoreRouterConnectingModule,
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [

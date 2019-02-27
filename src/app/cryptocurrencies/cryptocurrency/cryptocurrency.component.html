@@ -1,5 +1,5 @@
 <div class="text-center">
-  <h1>{{ cryptocurrency.name }}</h1>
+  <h1>{{ (cryptocurrencyState | async).cryptocurrencyDetails.name }}</h1>
 </div>
 
 <div class="col-sm-12">
@@ -10,38 +10,36 @@
 
 <div class="col-sm-6">
   <span class="bold">Rank</span><br>
-  <span>{{ cryptocurrency.rank }}</span><br><br>
+  <span>{{ (cryptocurrencyState | async).cryptocurrencyDetails.rank }}</span><br><br>
 
   <span class="bold">Name</span><br>
-  <span>{{ cryptocurrency.name }}</span><br><br>
+  <span>{{ (cryptocurrencyState | async).cryptocurrencyDetails.name }}</span><br><br>
 
   <span class="bold">Symbol</span><br>
-  <span>{{ cryptocurrency.symbol }}</span><br><br>
+  <span>{{ (cryptocurrencyState | async).cryptocurrencyDetails.symbol }}</span><br><br>
 
   <span class="bold">Price</span><br>
-  <span>{{ cryptocurrency.price | number : '1.2-2' }} {{ (settingsState | async).selectedCurrency }}</span><br><br>
+  <span>{{ (cryptocurrencyState | async).cryptocurrencyDetails.price | number : '1.2-2' }} {{ (settingsState | async).selectedCurrency }}</span><br><br>
 
   <span class="bold">24h Volume</span><br>
-  <span>{{ cryptocurrency.volume24 | number : '1.2-2'}}</span><br><br>
+  <span>{{ (cryptocurrencyState | async).cryptocurrencyDetails.volume24 | number : '1.2-2'}}</span><br><br>
 
   <span class="bold">Market cap</span><br>
-  <span>{{ cryptocurrency.marketCap | number : '1.2-2'}}</span><br><br>
+  <span>{{ (cryptocurrencyState | async).cryptocurrencyDetails.marketCap | number : '1.2-2'}}</span><br><br>
 
   <span class="bold">1h Change</span><br>
-  <span>{{ cryptocurrency.percentChange1h | number : '1.2-2'}} %</span><br><br>
+  <span>{{ (cryptocurrencyState | async).cryptocurrencyDetails.percentChange1h | number : '1.2-2'}} %</span><br><br>
 
   <span class="bold">24h Change</span><br>
-  <span>{{ cryptocurrency.percentChange24h | number : '1.2-2'}} %</span><br><br>
+  <span>{{ (cryptocurrencyState | async).cryptocurrencyDetails.percentChange24h | number : '1.2-2'}} %</span><br><br>
 
   <span class="bold">7d Change</span><br>
-  <span>{{ cryptocurrency.percentChange7d | number : '1.2-2'}} %</span><br><br>
+  <span>{{ (cryptocurrencyState | async).cryptocurrencyDetails.percentChange7d | number : '1.2-2'}} %</span><br><br>
 
   <span class="bold">Available Supply</span><br>
-  <span>{{ cryptocurrency.maxSupply }}</span><br><br>
+  <span>{{ (cryptocurrencyState | async).cryptocurrencyDetails.maxSupply }}</span><br><br>
 
   <span class="bold">Total Supply</span><br>
-  <span>{{ cryptocurrency.totalSupply }}</span><br><br>
+  <span>{{ (cryptocurrencyState | async).cryptocurrencyDetails.totalSupply }}</span><br><br>
 
 </div>
-
-<pre>{{ cryptocurrency | json }}</pre>
