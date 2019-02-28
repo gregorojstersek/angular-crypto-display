@@ -38,7 +38,6 @@ Built with Angular 6, using Angular CLI.
 
 ## Server side 
 
-- Libraries:
 * [express](http://expressjs.com/) for providing endpoints and middleware.
 * [request](https://www.npmjs.com/package/request) for http request to the RecipePuppy API.
 * [build-url](https://www.npmjs.com/package/build-url) for making correct parameters for the call.
