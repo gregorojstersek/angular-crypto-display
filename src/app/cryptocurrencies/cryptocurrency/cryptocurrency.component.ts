@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 import { CryptocurrencyDetails } from './cryptocurrency-details.model';
 import * as fromApp from '../../store/app.reducers';
 import * as fromSettings from '../../settings/store/settings.reducers';
@@ -28,14 +27,14 @@ export class CryptocurrencyComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       this.id = +params['id'];
       this.store.dispatch(new CryptocurrencyActions.SetCryptoCurrencyId(this.id));
-      this.getCryptocurrency();
+      this.getCryptocurrency(this.id);
     });
 
     this.settingsState = this.store.select('settings');
     this.cryptocurrencyState = this.store.select('cryptocurrency');
   }
 
-  getCryptocurrency = () => {
-    this.store.dispatch(new CryptocurrencyActions.GetCryptoCurrency(this.id));
+  getCryptocurrency = (id: number) => {
+    this.store.dispatch(new CryptocurrencyActions.GetCryptoCurrency(id));
   }
 }

@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLink="cryptocurrencies" routerLinkActive="active">Cryptocurrencies</a>
+          <a class="nav-link" routerLink="cryptocurrencies" [routerLinkActiveOptions]="{exact: true}"routerLinkActive="active">Cryptocurrencies</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="settings" routerLinkActive="active"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a>

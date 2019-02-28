@@ -15,7 +15,6 @@ import { reducers } from './store/app.reducers';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import * as fromSettings from './settings/store/settings.reducers';
 import { CryptocurrencyInterceptor } from './cryptocurrencies/cryptocurrency.interceptor';
 import { EffectsModule } from '@ngrx/effects';
 import { CryptocurrencyEffects } from './cryptocurrencies/store/cryptocurrency.effects';

@@ -1,14 +1,11 @@
 import {Injectable} from '@angular/core';
 import {Actions, Effect, ofType } from '@ngrx/effects';
-import {switchMap, withLatestFrom, map, take} from 'rxjs/operators';
-import {HttpClient, HttpRequest} from '@angular/common/http';
+import {switchMap, withLatestFrom, map} from 'rxjs/operators';
+import {HttpClient} from '@angular/common/http';
 import {Store} from '@ngrx/store';
 
 import * as CryptocurrencyActions from './cryptocurrency.actions';
-import * as fromCryptocurrency from './cryptocurrency.reducers';
-import * as fromSettings from '../../settings/store/settings.reducers';
 import * as fromApp from '../../store/app.reducers';
-import { Cryptocurrency } from './../cryptocurrency.model';
 
 @Injectable()
 export class CryptocurrencyEffects {
