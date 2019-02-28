@@ -1,27 +1,44 @@
 # CryptoDisplay
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
+A web application that finds top 100 cryptocurrencies and displays them.
 
-## Development server
+## Preview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![alt text](https://user-images.githubusercontent.com/9784551/53544448-53aaa880-3b26-11e9-9cd7-b89b2e518d81.gif)
 
-## Code scaffolding
+## Install 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Navigate to the root of the project and run:
 
-## Build
+```sh
+npm install
+```
+API key:
+* Get your api key here: https://coinmarketcap.com/api/ 
+* Go to the /server/config folder, rename config.example.json to config.json.
+* Copy your api key to the API_KEY property inside config.json
+ 
+Let's start the app.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```sh
+npm start 
+```
 
-## Running unit tests
+That will start the express server on localhost:3000 and client app on localhost:4200.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Client side
 
-## Running end-to-end tests
+Built with Angular 6, using Angular CLI.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Functionalities
 
-## Further help
+* displays top 100 cryptocurrencies
+* displays details of a cryptocurrency
+* dynamically displays some parameters in the correct currency
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Server side 
+
+- Libraries:
+* [express](http://expressjs.com/) for providing endpoints and middleware.
+* [request](https://www.npmjs.com/package/request) for http request to the RecipePuppy API.
+* [build-url](https://www.npmjs.com/package/build-url) for making correct parameters for the call.
