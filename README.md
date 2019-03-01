@@ -28,7 +28,7 @@ That will start the express server on localhost:3000 and client app on localhost
 
 ## Client side
 
-Built with Angular 6, using Angular CLI.
+Built with Angular 7, using Angular CLI.
 
 ### Functionalities
 
